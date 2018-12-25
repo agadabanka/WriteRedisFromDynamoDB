@@ -12,7 +12,7 @@ exports.handler = (event, context, globalCallback) => {
     event.Records.forEach((record) => {
         console.log('Event: ' + record.eventName + ' - ' + record.eventID);
         
-        var key = record.dynamodb.Keys.Number.N;
+        var key = record.dynamodb.Keys.playerId.S;
         console.log('Key identified: ' + key);
         
         if (record.eventName === "INSERT" || record.eventName === "MODIFY") {
